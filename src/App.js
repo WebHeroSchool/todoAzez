@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import {count, length} from './numbers.js';
 
 const login = false;
 const hyphen = ' - ';
 const a = 2;
 const b = 35;
-const count = 30;
+const variables = 'count * length =';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p>
+        {variables}
+        {count*length}
         </p>
         <button style={{
           fontSize: 26 + 30
