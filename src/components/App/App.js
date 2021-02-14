@@ -3,12 +3,12 @@ import InputItems from '../InputItem/InputItem.js';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer.js';
 
-
-  const App = () => (<div><h1>О_О</h1>
+const todoItem = 'Написать Приложение';
+const App = () => (<div><h1>О_О</h1>
   <button>Жмякай</button>
   <InputItems />
-  <ItemList />
-  <Footer />
+  <ItemList todoItem={todoItem} />
+  <Footer count={3} />
  </div>);
 
 export default App;
