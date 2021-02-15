@@ -1,12 +1,5 @@
-import React from'react';
-
-const ItemsList = () => (<ul>
-	<li>Первый Пункт Делишек</li>
-	<li>Второй Пункт Делишек</li>
-	<li>Третий Пункт Делишек</li>
-	<li>Четвёртый Пункт Делишек</li>
-	<li>Пятый Пункт Делишек</li>
-</ul>);
+import React from 'react';
+import ItemsList from '../ItemsList/ItemsList';
 
   const App = () => (<div><h1>О_О</h1>
   <button>Жмякай</button>
