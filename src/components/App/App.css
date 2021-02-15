@@ -1,0 +1,29 @@
+.wrap {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  margin: auto;
+  width: 500px;
+  border: 2px solid;
+  padding: 15px;
+}
+
+.wrap__title {
+  font-family: 'Tahoma';
+  font-weight: bold;
+}
+
+.wrap__button {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  background: #000;
+  width: 150px;
+  height: 40px;
+  border-radius: 7px;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/Montserrat-Bold.woff) format('woff');
+}
