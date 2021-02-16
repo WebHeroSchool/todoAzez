@@ -7,12 +7,12 @@
   padding: 15px;
 }
 
-.wrap__title {
+.title {
   font-family: 'Tahoma';
   font-weight: bold;
 }
 
-.wrap__button {
+.button {
   font-family: 'Montserrat';
   font-weight: bold;
   font-size: 20px;
