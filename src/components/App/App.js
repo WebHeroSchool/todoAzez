@@ -5,28 +5,29 @@ import Footer from '../Footer/Footer.js';
 import styles from './App.module.css';
 
 class App extends React.Component {
+	state = {
+		items: [
+	  	{
+	  		value: 'Написать Приложение',
+	  		isDone: false
+	  	},
+	  	{
+	  	  value: 'Прописать props',
+	  		isDone: true
+	  	},
+	  	{
+	  		value: 'Закончить обучение',
+	  		isDone: false
+	  	}
+	  ]
+	};
 	render () {
-		const items = [
-  	{
-  		value: 'Написать Приложение',
-  		isDone: false
-  	},
-  	{
-  	  value: 'Прописать props',
-  		isDone: true
-  	},
-  	{
-  		value: 'Закончить обучение',
-  		isDone: false
-  	}
-  ];
-
-  return (
+		return (
   	<div className={styles.wrap}>
   		<div className={styles.main}>
 	  	  <h1 className={styles.title}>Список важных дел:</h1>
 	      <InputItems />
-	      <ItemList items={items} />
+	      <ItemList items={this.state.items} />
 	      <Footer count={2} />
 	    </div>
     </div>);
