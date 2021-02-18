@@ -1,26 +1,32 @@
 .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Montserrat';
   font-weight: 900;
   margin: auto;
-  width: 500px;
+  height: 100vh;
+  background: #f6f6f8;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Montserrat';
+  font-weight: 900;
+  margin: auto;
   border: 2px solid;
-  padding: 15px;
+  border-radius: 7px;
+  padding: 30px;
+  background: #fff;
+  width: 60vh;
+  min-height: 300px;
 }
 
 .title {
   font-family: 'Tahoma';
   font-weight: bold;
-}
-
-.button {
-  font-family: 'Montserrat';
-  font-weight: bold;
-  font-size: 20px;
-  color: #fff;
-  background: #000;
-  width: 150px;
-  height: 40px;
-  border-radius: 7px;
 }
 
 @font-face {

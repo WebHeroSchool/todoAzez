@@ -1,9 +1,9 @@
 .item {
-  color: #c4c4c4;
-  text-decoration: line-through;
+  color: #333;
+  text-decoration: underline;
 }
 
 .done {
-  color: #333;
-  text-decoration: underline;
+  color: #c4c4c4;
+  text-decoration: line-through;
 }
