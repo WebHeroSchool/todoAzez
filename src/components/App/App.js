@@ -4,8 +4,9 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer.js';
 import styles from './App.module.css';
 
-const App = () =>{
-  const items = [
+class App extends React.Component {
+	render () {
+		const items = [
   	{
   		value: 'Написать Приложение',
   		isDone: false
@@ -29,7 +30,10 @@ const App = () =>{
 	      <Footer count={2} />
 	    </div>
     </div>);
+	}
 };
+
+  
 
 export default App;
 
