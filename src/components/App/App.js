@@ -22,11 +22,12 @@ const App = () =>{
 
   return (
   	<div className={styles.wrap}>
-  	  <h1 className={styles.title}>О_О Полное удивление моим делам</h1>
-      <button className={styles.button}>Жмякай</button>
-      <InputItems />
-      <ItemList items={items} />
-      <Footer count={33} />
+  		<div className={styles.main}>
+	  	  <h1 className={styles.title}>Список важных дел:</h1>
+	      <InputItems />
+	      <ItemList items={items} />
+	      <Footer count={2} />
+	    </div>
     </div>);
 };
 
