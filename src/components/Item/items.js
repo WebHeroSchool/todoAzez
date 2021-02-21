@@ -8,15 +8,15 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
-const Item = ({ value, isDone, onClickDone }) => (
+const Item = ({ value, isDone, onClickDone, id }) => (
 	<ListItem className={
 		classnames({
-			[styles.item]: true,
+			[styles.item]: false,
 			[styles.done]: isDone
 		})
 	}>
 		<Checkbox
-			onClick={() => onClickDone(isDone)} 
+			onClick={() => onClickDone(id)} 
 		/>
 		<ListItemText> {value}</ListItemText>
     <ListItemSecondaryAction className={styles.delete}>
