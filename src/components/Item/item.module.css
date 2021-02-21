@@ -7,3 +7,11 @@
   color: #c4c4c4;
   text-decoration: line-through;
 }
+
+.delete {
+  display: none;
+}
+
+.itm:hover ~ .delete {
+  display: block;
+}
