@@ -9,17 +9,14 @@ class App extends React.Component {
 		items: [
 	  	{
 	  		value: 'Написать Приложение',
-	  		isDone: false,
 	  		id: 1
 	  	},
 	  	{
 	  	  value: 'Прописать props',
-	  		isDone: false,
 	  		id: 2
 	  	},
 	  	{
 	  		value: 'Закончить обучение',
-	  		isDone: false,
 	  		id: 3
 	  	}
 	  ],
@@ -55,7 +52,6 @@ class App extends React.Component {
 			...state.items,
 			{
 				value ,
-				isDone: false,
 				id: state.count + 1
 			}
 		],
@@ -69,7 +65,7 @@ class App extends React.Component {
 		  	  <h1 className={styles.title}>Список важных дел:</h1>
 		      <InputItems onClickAdd={this.onClickAdd} />
 		      <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
-		      <Footer count={this.state.count} />
+		      <Footer />
 		    </div>
 	    </div>
 	  );
