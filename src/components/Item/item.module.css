@@ -1,17 +1,15 @@
 .item {
   color: #333;
-  text-decoration: line-through;
 }
 
 .done {
   color: #c4c4c4;
-  text-decoration: underline;
 }
 
 .delete {
-  display: none;
+  display: block;
 }
 
 .itm:hover ~ .delete {
-  display: block;
+  display: none;
 }
