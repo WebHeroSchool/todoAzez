@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 class Item extends React.Component {
 	componentDidMount() {
-		console.log('componentDidMount');
+		this.timerID = setInterval(() => console.log('Утечка'), 4000);
 	}
 
 	componentDidUpdate() {
@@ -21,6 +21,7 @@ class Item extends React.Component {
 
 	componentWillUnmount() {
 		console.log('componentWillUnmount');
+		clearInterval(this.timerID);
 	}
 
 	render() {
