@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from '../Item/items.js';
 import List from '@material-ui/core/List';
+import PropTypes from 'prop-types';
 
 
 const ItemList = ({items, onClickDone, onClickDelete }) => (
@@ -17,5 +18,8 @@ const ItemList = ({items, onClickDone, onClickDelete }) => (
   </List>
   );
 
+ItemList.propTypes = {
+	items: PropTypes.array.isRequired
+}
 
 	export default ItemList;

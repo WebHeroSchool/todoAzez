@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
+import PropTypes from 'prop-types';
 
 const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
 	<ListItem className={
@@ -28,8 +29,11 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
   </ListItem>
   );
 
-Item.defaultProps = {
-	isDone: false
-};
+
+Item.propTypes = {
+	isDone: PropTypes.bool.isRequired,
+	value: PropTypes.string.isRequired,
+	id: PropTypes.number.isRequired
+}
 
 export default Item;
