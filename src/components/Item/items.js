@@ -10,30 +10,41 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import PropTypes from 'prop-types';
 
-const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (
-	<ListItem className={
-		classnames({
-			[styles.item]: true,
-			[styles.done]: isDone
-		})
-	}>
-		<Checkbox
-			onClick={() => onClickDone(id)} 
-		/>
-		<ListItemText> {value}</ListItemText>
-    <ListItemSecondaryAction className={styles.delete}>
-      <IconButton aria-label="Comments">
-        <DeleteForeverRoundedIcon onClick={() => onClickDelete(id)} />
-      </IconButton>
-    </ListItemSecondaryAction>
-  </ListItem>
-  );
+class Item extends React.Component {
+	componentDidMount() {
+		console.log('componentDidMount');
+	}
 
+	componentDidUpdate() {
+		console.log('componentDidUpdate');
+	}
 
-Item.propTypes = {
-	isDone: PropTypes.bool.isRequired,
-	value: PropTypes.string.isRequired,
-	id: PropTypes.number.isRequired
-}
+	componentWillUnmount() {
+		console.log('componentWillUnmount');
+	}
+
+	render() {
+		const { value, isDone, onClickDone, id, onClickDelete } = this.props;
+
+		return(
+			<ListItem className={
+				classnames({
+				[styles.item]: true,
+				[styles.done]: isDone
+				})
+			}>
+				<Checkbox
+					onClick={() => onClickDone(id)} 
+				/>
+				<ListItemText> {value}</ListItemText>
+	    	<ListItemSecondaryAction className={styles.delete}>
+		      <IconButton aria-label="Comments">
+		        <DeleteForeverRoundedIcon onClick={() => onClickDelete(id)} />
+		      </IconButton>
+		    </ListItemSecondaryAction>
+		  </ListItem>
+  	);
+	}
+};
 
 export default Item;
