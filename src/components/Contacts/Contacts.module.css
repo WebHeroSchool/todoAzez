@@ -1,0 +1,23 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat';
+  font-weight: 900;
+  margin: 0;
+  height: 60vh;
+  width: 535px;
+  background: #f6f6f8;
+}
+
+.title {
+  font-family: 'Tahoma';
+  font-weight: bold;
+  width: 535px;
+  margin: 20px;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/Montserrat-Bold.woff) format('woff');
+}
