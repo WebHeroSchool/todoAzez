@@ -13,7 +13,7 @@ class InputItems extends React.Component {
 
 	buttonSend = (event) => {
 		this.setState({
-			value: event.target.value.toUpperCase(),
+			value: event.target.value,
 			buttonSent: event.target.value.length > 0
 		});
 	}
