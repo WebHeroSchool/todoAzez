@@ -11,19 +11,7 @@ import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import PropTypes from 'prop-types';
 
 class Item extends React.Component {
-	componentDidMount() {
-		this.timerID = setInterval(() => console.log('Утечка'), 4000);
-	}
-
-	componentDidUpdate() {
-		console.log('componentDidUpdate');
-	}
-
-	componentWillUnmount() {
-		console.log('componentWillUnmount');
-		clearInterval(this.timerID);
-	}
-
+	
 	render() {
 		const { value, isDone, onClickDone, id, onClickDelete } = this.props;
 
