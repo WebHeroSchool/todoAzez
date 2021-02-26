@@ -1,86 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import InputItems from '../InputItem/InputItem.js';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer.js';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styles from './App.module.css';
+import Todo from '../Todo/Todo.js';
+import Contacts from '../Contacts/Contacts.js';
+import About from '../About/About.js';
+import Card from '@material-ui/core/Card';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
 
-const App = () => {
-	const initialState = {
-		item: [
-	  	{
-	  		value: 'Написать Приложение',
-	  		id: 1
-	  	},
-	  	{
-        value: 'Прописать props',
-        id: 2
-      },
-      {
-        value: 'Закончить обучение',
-        id: 3
-      }
-	  ],
-    count: 3
-	};
 
-const [item, setItem] = useState(initialState.item);
-const [count, setCount] = useState(initialState.count);
+const App = () => 
+(<Router>
+	<div className={styles.wrap}>
+		<Card className={styles.sidebar}>
+			<MenuList>
+				<Link to='/'  className={styles.link}><MenuItem className={styles.item}>Про меня</MenuItem></Link>
+				<Link to='/todo'  className={styles.link}><MenuItem className={styles.item}>Дела</MenuItem></Link>
+				<Link to='/contacts'  className={styles.link}><MenuItem className={styles.item}>Контакты</MenuItem></Link>
+			</MenuList>
+		</Card>
 
-useEffect (() =>  {
-	console.log('update');
-});
-
-useEffect (() =>  {
-	console.log('mount')
-}, []);
-
-	const onClickDone = id => {
-		const newItems = item.map(item => {
-			const newItem = { ...item};
-			if (newItem.id === id) {
-					newItem.isDone =! item.isDone
-			}
-			return newItem;
-		});
-
-		setItem(newItems)
-	};
-
-	const onClickDelete = id => {
-		const newItems = item.filter(item => {
-			const newItem = {...item};
-			if (item.id !== id) {
-				return newItem;
-			}
-		})
-		setItem(newItems);
-		setCount((count) => count - 1);
-	};
-
-	const onClickAdd = value => {
-		const newItems = [
-			...item,
-			{
-				value ,
-				id: count + 1
-			}
-		];
-		setItem(newItems);
-		setCount((count) => count + 1);
-	};
-
-	return (
-  	<div className={styles.wrap}>
-  		<div className={styles.main}>
-	  	  <h1 className={styles.title}>Список важных дел:</h1>
-	      <InputItems onClickAdd={onClickAdd} />
-	      <ItemList items={item} onClickDone={onClickDone} onClickDelete={onClickDelete} />
-	      <Footer count={count} />
-	    </div>
-    </div>
-  );
-};
- 
+		<Card className={styles.content}>
+			<Route path='/' exact component={About} />
+			<Route path='/todo' component={Todo} />
+			<Route path='/contacts' component={Contacts} />
+		</Card>
+	</div>
+</Router>);
 
 export default App;
 
