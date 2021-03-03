@@ -33,9 +33,19 @@
   color: black;
 }
 
+.link:hover,
+.link:focus {
+  text-decoration: underline;
+  color: #c4c4c4;
+}
+
+.link:active {
+  opacity: 0.5;
+}
+
 .item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   font-family: 'Montserrat';
   font-weight: 900;
