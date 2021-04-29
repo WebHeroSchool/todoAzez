@@ -1,53 +1,65 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import classnames from 'classnames';
 import styles from './InputItem.module.css';
+import buttonImg from './img/add.svg';
+// import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+// import Input from '@material-ui/core/Input';
+// import Button from '@material-ui/core/Button';
+// import Grid from '@material-ui/core/Grid';
+// import styles from './InputItem.module.css';
 
 class InputItems extends React.Component {
-	state = {
-		value:'',
-		buttonSent: false
-	};
+  state = {
+    inputValue: '',
+    error: false,
+    repeat: false
+  };
 
-	buttonSend = (event) => {
-		this.setState({
-			value: event.target.value,
-			buttonSent: event.target.value.length > 0
-		});
-	}
-	
-	render() {
-		const { onClickAdd } = this.props;
+  onSubmit = (event) => {
+    event.preventDefault();
 
-		return (<Grid>
-		 	<Input
-		    id="standard-full-width"
-		    style={{ margin: 8 }}
-		    placeholder="Добавить задание"
-		    margin="normal"
-		    fullWidth
-		    value={this.state.value}
-		    onChange={this.buttonSend}
-		  />
-		  <Button 
-		    noSent={!this.state.buttonSent}
-		    variant='contained'
-		    color='primary'
-		    fullWidth
-		    onClick={() => {
-		    	if (this.state.value !== '') {
-		    		onClickAdd(this.state.value);
-		    		this.setState({value: '',
-		    			buttonSent: false})}
-		    	}
-		    }
-		  >
-		    Жмякай
-		  </Button>
-		</Grid>);
-	}
-}
+    if (this.state.inputValue === '') {
+      this.setState({
+          error: true,
+          repeat: false
+      })
+    } else if (this.props.items.find(item => item.value === this.state.inputValue)) {
+      this.setState({
+          repeat: true
+      })
+    } else {
+      this.setState({
+          inputValue: '',
+          error: false,
+          repeat: false
+      })
+      this.props.onClickAdd(this.state.inputValue);
+    }
+  }
+
+  render() {
+    const { onClickAdd, items } = this.props;
+
+    return (
+      <form
+        onSubmit={this.onSubmit}
+        className={classnames({
+          [styles.form]: true,
+          [styles.error]: this.state.error,
+          [styles.repeat]: this.state.repeat
+        })}>
+        <input 
+          type='text'
+          placeholder={'Просто введите сюда название дела...'}
+          value={this.state.inputValue}
+          onChange={event => this.setState({inputValue: event.target.value})}
+          className={styles.input}
+        />
+        <button className={styles.btn}>
+          <img src={buttonImg} alt='Button'/>
+        </button>
+      </form>);
+  }
+};
 
 export default InputItems;
