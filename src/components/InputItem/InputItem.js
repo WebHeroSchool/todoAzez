@@ -2,11 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './InputItem.module.css';
 import buttonImg from './img/add.svg';
-// import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-// import Input from '@material-ui/core/Input';
-// import Button from '@material-ui/core/Button';
-// import Grid from '@material-ui/core/Grid';
-// import styles from './InputItem.module.css';
 
 class InputItems extends React.Component {
   state = {
@@ -50,7 +45,7 @@ class InputItems extends React.Component {
         })}>
         <input 
           type='text'
-          placeholder={'Просто введите сюда название дела...'}
+          placeholder={'Туточки напиши свои делишки...'}
           value={this.state.inputValue}
           onChange={event => this.setState({inputValue: event.target.value})}
           className={styles.input}

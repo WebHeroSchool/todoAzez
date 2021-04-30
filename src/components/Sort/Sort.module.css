@@ -1,4 +1,6 @@
 .btn {
+  font-family: 'Montserrat';
+  font-weight: 600;
   padding: 2px 8px;
   color: #000;
   background-color: transparent;
@@ -17,11 +19,12 @@
 
 .btn_active {
   padding: 2px 8px;
-  background: #356EFF;
+  background: #491099;
   border-radius: 23px;
-  color: #fff;
+  color: #ffd32b;
 }
 
+  
 .btn_active:hover {
   cursor: pointer;
   opacity: .8;
@@ -29,6 +32,7 @@
 }
 
 .items_count {
+  font-family: 'Montserrat';
   margin: 0 0 0 3px;
   color: #356EFF;
 }
@@ -36,6 +40,12 @@
 .btn_active .items_count{
   color: #fff;
 }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./fonts/Montserrat-Bold.woff) format('woff');
+}
+
 
 @media (max-width: 364px) {
 

@@ -9,10 +9,6 @@ import emailImg from './img/email.svg';
 import telegramImg from './img/telegram.svg';
 import githubImg from './img/github.svg';
 import vkImg from './img/vk.svg';
-import linkedinImg from './img/LinkedIn.svg';
-import facebookImg from './img/facebook.svg';
-// import Avatar from '@material-ui/core/Avatar';
-// import CardContent from '@material-ui/core/CardContent';
 
 const octokit = new Octokit();
 

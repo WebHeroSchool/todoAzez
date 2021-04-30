@@ -3,11 +3,6 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import styles from './App.module.css';
 import Todo from '../Todo/Todo.js';
 import About from '../About/About.js';
-// import Contacts from '../Contacts/Contacts.js';
-// import Card from '@material-ui/core/Card';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import MenuList from '@material-ui/core/MenuList';
-
 
 const App = () => 
 (<Router>

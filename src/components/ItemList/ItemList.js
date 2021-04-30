@@ -2,10 +2,6 @@ import React from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import Item from '../Item/items.js';
 import styles from './ItemList.module.css';
-// import Item from '../Item/items.js';
-// import List from '@material-ui/core/List';
-// import PropTypes from 'prop-types';
-
 
 const ItemList = ({ items, onClickDone, onClickDelete}) => {
   if (items.length === 0) {

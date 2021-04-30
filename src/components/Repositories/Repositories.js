@@ -35,7 +35,7 @@ class Repositories extends React.Component {
 
   componentDidMount() {
     octokit.repos.listForUser({
-      username: 'IvanBurovkin'
+      username: 'AzezAeksandrChernilevskiy'
       }).then(({ data }) => {
         this.setState({
           repoList: data,
@@ -55,14 +55,14 @@ class Repositories extends React.Component {
     return (
       <Card>
         <div className={styles.wrap}>
-          <h1 className={styles.title}>Репозитории на github.com</h1>
+          <h1 className={styles.title}>Репозитории github.com</h1>
           { isLoading ? <CircularProgress className={styles.preloader}/> :
             <div className={styles.inner}>
                 { isError ? 
                   <div className={styles.error_container}>
                     <img src={ errorImg } alt='Error' className={styles.error_img} />
-                    <h2 className={styles.error_subtitle}>Что-то пошло не так...</h2>
-                    <p className={styles.error_text}>Попробуйте 
+                    <h2 className={styles.error_subtitle}>Что-то ну совсем не так...</h2>
+                    <p className={styles.error_text}>Попытка 
                       <a href='' onClick={() => window.location.reload()} className={styles.error_link}> загрузить </a> 
                     еще раз</p>
                   </div> :
@@ -70,8 +70,8 @@ class Repositories extends React.Component {
                       { repoList.length === 0 ? 
                         <div className={styles.error_container}>
                           <img src={ errorImg } alt='Error' className={styles.error_img} />
-                          <h2 className={styles.error_subtitle}>Репозитории отсутствуют</h2>
-                          <p className={styles.error_text}>Добавьте как минимум один репозиторий на&ensp;
+                          <h2 className={styles.error_subtitle}>Нет ни одного Репозитория</h2>
+                          <p className={styles.error_text}>Добавьте ну хотя бы один репозиторий на&ensp;
                             <a href='https://github.com' target='_blank' rel='noopener noreferrer' className={styles.error_link}>github.com</a>
                           </p>
                         </div> :
